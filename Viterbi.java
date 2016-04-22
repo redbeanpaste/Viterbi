@@ -105,7 +105,7 @@ public class Viterbi {
         
         System.out.println("seq: "+Arrays.toString(seq));
         
-        // calc begin
+        // calculate begin
         for(int t = 1; t <= T; t++)
         {
             String sym = seq[t-1];
@@ -230,7 +230,14 @@ public class Viterbi {
     }
     
     public static void main(String[] args) throws IOException {
-        // TODO code application logic here
+        // there is 6 input file for this viterbi algorithm
+        // states.txt contains all states of model(start and end state dont include here)
+        // symbols.txt contains all symbols that present in sequence and emitted from all states
+        // starting.txt contains prob from starting state to all states in model
+        // transition.txt contains prob from state i to state j in model
+        // emission.txt contains prob of state j will emit symbol i
+        // sequence.txt contains sequence to find most probably path from model
+    
         Viterbi v = new Viterbi();
         v.findPath();
     }
